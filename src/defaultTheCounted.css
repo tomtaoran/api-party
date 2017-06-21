@@ -1,0 +1,19 @@
+ul#pie-label li {
+    display:inline;
+    margin: 1rem;
+}
+#label-gunshout{
+ background-color:rgba(151,187,205,1)
+}
+#label-other{
+ background-color:rgba(220,220,220,1)
+}
+#label-structbyvehicle{
+ background-color:rgba(247,70,74,1)
+}
+#label-deathincustody{
+ background-color:rgba(70,191,189,1)
+}
+#label-taser{
+ background-color:rgba(253,180,92,1)
+}

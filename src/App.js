@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Switch, Route, NavLink } from 'react-router-dom'
+import Github from './Github'
+import Nasa from './Nasa'
+import Homework from './Homework'
+import TheCounted from './TheCounted'
+import Geoip from './Geoip'
 import './App.css';
 
 class App extends Component {
@@ -7,12 +12,36 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <div className="App-headings">
+            <h3>Ain't no party like an</h3>
+            <h1>API Party</h1>
+          </div>
+          <ul className="nav-links">
+            <li>
+              <NavLink to={'/github'}>Github API</NavLink>
+            </li>
+            <li>
+              <NavLink to={'/nasa'}>NASA API</NavLink>
+            </li>
+            <li>
+              <NavLink to={'/homework'}>Homework</NavLink>
+            </li>
+             <li>
+              <NavLink to={'/thecounted'}>The Counted</NavLink>
+            </li>
+            <li>
+              <NavLink to={'/geoip'}>IP Address Lookup</NavLink>
+            </li>
+          </ul>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Switch>
+          <Route path='/github' component={Github} />
+          <Route path='/nasa' component={Nasa} />
+          <Route path='/homework' component={Homework} />
+          <Route path='/thecounted' component={TheCounted} />
+          <Route path='/geoip' component={Geoip} />
+          <Route render={() => <p>To get started, click one of the links above</p>} />
+        </Switch>
       </div>
     );
   }

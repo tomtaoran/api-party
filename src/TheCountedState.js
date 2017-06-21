@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import PieChart from 'react-simple-pie-chart';
-
-//import './GithubUser.css'
+import './defaultTheCounted.css'
 
 class TheCountedState extends Component {
  state = {
@@ -16,6 +15,11 @@ class TheCountedState extends Component {
   constructor(props) {
     super(props)
     this.fetchUserData(this.props)
+    if(!document.querySelector("script")){
+    const script = document.createElement("script");
+    script.src = "https://www.gstatic.com/charts/loader.js";
+    document.body.appendChild(script);
+    }
   }
 
   processData(data) {
@@ -68,7 +72,8 @@ class TheCountedState extends Component {
     const { causeOfDeath } = this.state
     return (
         <div className="chart">
-            <PieChart
+            <div className="graph">
+                <PieChart
             slices={[
             {
             color: 'rgba(151,187,205,1)',
@@ -92,13 +97,19 @@ class TheCountedState extends Component {
             },
             ]}
         />
-        <ul id="pie-label">
-        <li id="label-gunshout"><span ></span>Gunshot</li>
-        <li id="label-other"><span ></span>Other</li>
-        <li id="label-structbyvehicle"><span ></span>Struct by Vehicle</li>
-        <li id="label-deathincustody"><span ></span>Death in Custody</li>
-        <li id="label-taser"><span ></span>Taser</li>
-        </ul>  
+            </div>
+            
+        <svg width="10" height="10"><rect id="label-gunshot"  width="10" height="10"/></svg>
+        <li><span ></span>Gunshot</li>
+        <svg width="10" height="10"><rect id="label-other"  width="10" height="10"/></svg>
+        <li><span ></span>Other</li>
+        <svg width="10" height="10"><rect id="label-structbyvehicle"  width="10" height="10"/></svg>
+        <li><span ></span>Struct by Vehicle</li>
+        <svg width="10" height="10"><rect id="label-deathincustody"  width="10" height="10"/></svg>
+        <li><span ></span>Death in Custody</li>
+        <svg width="10" height="10"><rect id="label-taser"  width="10" height="10"/></svg>
+        <li><span ></span>Taser</li>
+          
         </div>
     )
   }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-//import './defaultGeoip.css'
+import './defaultGeoip.css'
 
 class defaultGeoip extends Component {
   state = {
@@ -72,8 +72,8 @@ class defaultGeoip extends Component {
         <h3>Latitude: {result.latitude}</h3>
         <h3>Longitude: {result.longitude}</h3>
         <h2><strong><i>To Our Valued Users:</i></strong> If you see some <i>unreadable/wired</i> IP feedbacks,
-        please <i>refresh</i> your page. This API still need funding</h2>
-        <a href="http://freegeoip.net">Link to this API website, if you like, donate</a>
+        please <i>refresh</i> your page. This API still need funding: </h2>
+        <a href="http://freegeoip.net"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" alt="Donate on Paypal" width="15%" height="42" border="0" /></a>
       </div>
     )
     }

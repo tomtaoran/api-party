@@ -1,0 +1,14 @@
+h3 {
+  color: rgb(62,134,249);
+  margin: 8px;
+}
+
+h3:first-child {
+  color: rgb(62,134,249);
+  margin-top: 0px;
+}
+
+h2{
+  color: #ff3030;
+  margin: 10px;
+}

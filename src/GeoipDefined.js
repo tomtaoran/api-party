@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-//import './GeoipDefined.css'
+import './defaultGeoip.css'
 
 class GeoipDefined extends Component {
   state = {
@@ -13,9 +13,7 @@ class GeoipDefined extends Component {
       latitude:"Unknown",
       longitude:"Unknown",
     },
-    error:{
-
-    }
+    error:null
   }
   constructor(props) {
     super(props)
@@ -52,6 +50,7 @@ class GeoipDefined extends Component {
   componentWillReceiveProps(nextProps) {
     const locationChanged = nextProps.location !== this.props.location
     if (locationChanged) {
+        this.setState({error:null})
       this.fetchUserData(nextProps)
     }
   }
@@ -60,13 +59,16 @@ class GeoipDefined extends Component {
     fetch(`http://freegeoip.net/json/${props.match.params.userinput}`)
       .then(response => response.json())
       .then(data => this.processData(data))
-      .catch(error => this.setState({error}))
+      .catch(error => {
+          console.log('error', error)
+          this.setState({error})
+      })
   }
 
   render() {
     const { result } = this.state
-    if(!this.state.error){
-        return <h2><strong>Looks like something goes wrong: </strong>{this.state.error}</h2>
+    if(this.state.error){
+        return <h2><strong>Looks like something goes wrong: </strong>{this.state.error.message}</h2>
     }else{
     return (
         <div className="geoip-result">
@@ -80,7 +82,8 @@ class GeoipDefined extends Component {
         <h3>Longitude: {result.longitude}</h3>
         <h2><strong><i>To Our Valued Users:</i></strong> If you see some <i>unreadable/wired</i> IP feedbacks,
         please <i>refresh</i> your page. This API still need funding</h2>
-        <a href="http://freegeoip.net">Link to this API website, if you like, donate</a>
+        <a href="http://freegeoip.net"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" alt="Donate on Paypal" width="15%" height="42" border="0" /></a>
+      
       </div>
     )
     }

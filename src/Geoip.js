@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
 import defaultGeoip from './defaultGeoip'
-//import './Geoip.css'
+import './Geoip.css'
 import GeoipDefined from './GeoipDefined'
 
 class Geoip extends Component {
@@ -33,7 +33,7 @@ class Geoip extends Component {
             <input 
               id="user_input"
               type="text"
-              placeholder="Input IP address or domain name, like 8.8.8.8 or google.com"
+              placeholder="Example input: 8.8.8.8 or google.com"
               value={this.state.userinput}
               onChange={this.handleChange}
               autoFocus

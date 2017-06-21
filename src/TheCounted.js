@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
 import defaultTheCounted from './defaultTheCounted'
 import TheCountedState from './TheCountedState'
-//import './TheCounted.css'
+import './TheCounted.css'
 
 class TheCounted extends Component {
   state = {
@@ -26,6 +26,7 @@ class TheCounted extends Component {
         <img className="thecounted-logo" src="http://media.graytvinc.com/images/POLICE+SHOOTING+MGN.jpg" alt="police shooting logo"/>
         <form onSubmit={this.handleSubmit}>
             <select className="userState" defaultValue="" onClick={this.handleClick}>
+                <option value="" >U.S. Total</option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
                 <option value="AZ">Arizona</option>

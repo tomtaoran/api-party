@@ -1,0 +1,44 @@
+.thecounted {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.thecounted-logo {
+    width: 100%;
+    max-width: 500px;
+}
+
+.thecounted select {
+    font-family: "Gentium Book Basic", serif;
+    box-sizing: border-box;
+    width: 80%;
+    padding: 10px;
+    font-size: 24px;
+    background-clip: padding-box;
+    border-color: rgba(0,0,0,0.25);
+    border-radius: 5px;
+    line-height: 20px;
+    border: 1px solid #d1d5da;
+    text-align-last:center;
+}
+
+.thecounted button {
+    color: white;
+    margin-top: 10px;
+    width: 80%;
+    padding: 10px;
+    font-size: 24px;
+    border-radius: 5px;
+    border: 1px solid #01638f;
+    margin-bottom: 10px;
+    background-color: #0184be;
+    font-family: "Gentium Book Basic", serif;
+}
+
+.thecounted button:hover {background-color: #0079ad}
+
+.thecounted button:active {
+  background-color: #0079ad;
+  box-shadow: 0 5px #666;
+  transform: translateY(1px);
+}
